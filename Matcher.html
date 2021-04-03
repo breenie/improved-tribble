@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+<title>Matcher</title>
+<script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+
+    <div class="container">
+         <h1 class="text-center padding">Match</h1>
+         <hr class="my-6">
+     </div>         
+        <div class="container">
+        <div class="row">
+        <div class="col-lg-4 table-bg">
+                <table class="table table-hover rounded">
+                <thead class="table-head">
+                    <tr>
+                    <th scope="col">Company</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td class="padding row investor" id="investor-38" onclick="//selectInvestor(38)">Bonadea AB</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-5" onclick="//selectInvestor(5)">Creandum</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-40" onclick="//selectInvestor(40)">Easy Investor</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-39" onclick="//selectInvestor(39)">FIndec</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-6" onclick="//selectInvestor(6)">Newion</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-4" onclick="//selectInvestor(4)">Nordvest</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-2" onclick="//selectInvestor(2)">Sommet AB</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-41" onclick="//selectInvestor(41)">Strict Investor</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-3" onclick="//selectInvestor(3)">Superb MGMT Sweden AB</td>
+                    </tr>
+                    <tr>
+                        <td class="padding row investor" id="investor-1" onclick="//selectInvestor(1)">Tech Trail Invest AB</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+
+            <div class="col-lg-4 w=100" id="selected-company-info">
+                <span>Company</span>
+                <span>something else</span>
+            </div>
+            <div class="col-lg-4 table-bg">
+                <h1 class="criteria">Criteria</h1>
+                <hr class="my-7">
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Location" onchange="updateMatches()">
+                        <label for="Location">Location</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="LocationNordic" onchange="updateMatches()">
+                        <label for="LocationNordic">LocationNordic</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="LocationEurope" onchange="updateMatches()">
+                        <label for="LocationEurope">LocationEurope</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="ExistingInvestors" onchange="updateMatches()">
+                        <label for="ExistingInvestors">ExistingInvestors</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Industry" onchange="updateMatches()">
+                        <label for="Industry">Industry</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Stage" onchange="updateMatches()">
+                        <label for="Stage">Stage</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Investment" onchange="updateMatches()">
+                        <label for="Investment">Investment</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="InvestmentNear20" onchange="updateMatches()">
+                        <label for="InvestmentNear20">InvestmentNear20</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="InvestmentNear30" onchange="updateMatches()">
+                        <label for="InvestmentNear30">InvestmentNear30</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="InvestmentNear40" onchange="updateMatches()">
+                        <label for="InvestmentNear40">InvestmentNear40</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="FounderCount" onchange="updateMatches()">
+                        <label for="FounderCount">FounderCount</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="TeamCount" onchange="updateMatches()">
+                        <label for="TeamCount">TeamCount</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="FemaleFounders" onchange="updateMatches()">
+                        <label for="FemaleFounders">FemaleFounders</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="FemaleTeam" onchange="updateMatches()">
+                        <label for="FemaleTeam">FemaleTeam</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Capitalization" onchange="updateMatches()">
+                        <label for="Capitalization">Capitalization</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="Traction" onchange="updateMatches()">
+                        <label for="Traction">Traction</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="ExpectedTraction" onchange="updateMatches()">
+                        <label for="ExpectedTraction">ExpectedTraction</label>
+                    </div>
+                    <div>
+                        <input class="rule-checkbox" type="checkbox" id="ExternalSupport" onchange="updateMatches()">
+                        <label for="ExternalSupport">ExternalSupport</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <table id="result"></table>
+    </div>
+</div>
+    <div>
+        <script src="./Matcher_files/matcher.js"></script>
+    </div>
+</body>
+
+
+</html>
